@@ -53,13 +53,16 @@ AM_CFLAGS = @CWFLAGS@
 AM_CPPFLAGS = \
 	-I../ext \
 	-I../libevent-modified/include \
+	-I../libsodium/src/libsodium/include \
 	-DPKGDATADIR='"${pkgdatadir}"'
 
 dnscrypt_proxy_LDADD = \
+	../libsodium/src/libsodium/libsodium.la \
 	../libevent-modified/libevent_extra.la \
 	../libevent-modified/libevent_core.la
 
 dnscrypt_proxy_DEPENDENCIES = \
+	../libsodium/src/libsodium/libsodium.la \
 	../libevent-modified/libevent_extra.la \
 	../libevent-modified/libevent_core.la
 

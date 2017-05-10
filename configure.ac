@@ -5,6 +5,7 @@ AC_CONFIG_AUX_DIR([libltdl/config])
 AC_CONFIG_SRCDIR([src/proxy/app.c])
 AC_CONFIG_HEADER([config.h])
 AC_CONFIG_SUBDIRS([src/libevent-modified])
+AC_CONFIG_SUBDIRS([src/libsodium])
 AC_CANONICAL_HOST
 AM_INIT_AUTOMAKE([1.11 dist-bzip2 tar-ustar gnu subdir-objects])
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
@@ -413,7 +414,7 @@ AC_SEARCH_LIBS(backtrace, [execinfo],
 AC_SEARCH_LIBS(gethostbyname, [resolv nsl])
 AC_SEARCH_LIBS(recvfrom, [socket])
 AC_SEARCH_LIBS(kvm_open, [kvm])
-AC_SEARCH_LIBS(sodium_hex2bin, [sodium], [ ], AC_ERROR([libsodium >= 1.0.0 not found]))
+#AC_SEARCH_LIBS(sodium_hex2bin, [sodium], [ ], AC_ERROR([libsodium >= 1.0.0 not found]))
 
 use_ldns=no
 AC_CHECK_HEADER([ldns/ldns.h], [

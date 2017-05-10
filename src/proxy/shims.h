@@ -10,7 +10,7 @@
  * Debian Jessie ships an old version of libsodium that doesn't support
  * overlapping buffers. Use temporary buffers to work around this.
  */
-#if SODIUM_LIBRARY_VERSION_MAJOR < 7 || (SODIUM_LIBRARY_VERSION_MAJOR == 7 && SODIUM_LIBRARY_VERSION_MINOR <= 2)
+#if 0
 # warning The installed libsodium version is very old and will not be supported in the future.
 # warning Support for the XChaCha20 cipher will also not be available in that build.
 static int
@@ -53,7 +53,7 @@ crypto_box_open_easy_nooverlap(unsigned char *m, const unsigned char *c,
 # define crypto_box_open_easy crypto_box_open_easy_nooverlap
 #endif
 
-#ifndef HAVE_CRYPTO_BOX_EASY_AFTERNM
+#if 0
 static int
 crypto_box_detached_afternm(unsigned char *c, unsigned char *mac,
                             const unsigned char *m, unsigned long long mlen,
@@ -118,7 +118,7 @@ crypto_box_open_easy_afternm(unsigned char *m, const unsigned char *c,
 }
 #endif
 
-#if defined(HAVE_CRYPTO_BOX_CURVE25519XCHACHA20POLY1305_OPEN_EASY_AFTERNM)
+#if 1
 # define HAVE_XCHACHA20 1
 
 #elif defined(HAVE_CRYPTO_CORE_HCHACHA20)

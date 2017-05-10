@@ -1,5 +1,6 @@
 
 SUBDIRS = \
+	libsodium \
 	ext \
 	libevent-modified \
 	proxy \
