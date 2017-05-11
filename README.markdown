@@ -8,12 +8,15 @@ This is a fork of dnscrypt-proxy with libsodium source code bundled in, removing
 Android compile instructions
 ============================
 
-First things first, download Android NDK from [here](https://developer.android.com/ndk/downloads/index.html) and unpack it somewhere. I'll assume you unpacked it into `$HOME/android-ndk-r14b`:
+First things first, download Android NDK from [here](https://developer.android.com/ndk/downloads/index.html) and unpack it somewhere. I'll assume you unpacked it into `$HOME/android-ndk-r14b`.
+
+You will also need autoconf, automake and libtool.
 
 ```bash
 git clone https://github.com/AdguardTeam/dnscrypt-proxy-static
 cd dnscrypt-proxy-static
 export ANDROID_NDK_HOME=$HOME/android-ndk-r14b ## location of android NDK
+autoreconf -f -i -v
 dist-build/android-arm.sh
 dist-build/android-armv7-a.sh
 dist-build/android-armv8-a.sh
