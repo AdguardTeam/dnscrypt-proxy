@@ -23,6 +23,7 @@ dist-build/android-armv8-a.sh
 dist-build/android-mips32.sh
 dist-build/android-mips64.sh
 dist-build/android-x86.sh
+dist-build/android-x86-64.sh
 ```
 
 After everything compiles, there will be .zip files for each android architecture in current directory.
