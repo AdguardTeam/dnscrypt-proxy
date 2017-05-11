@@ -1,4 +1,32 @@
-[![Build Status](https://travis-ci.org/hmage/dnscrypt-proxy-static.png?branch=master)](https://travis-ci.org/hmage/dnscrypt-proxy-static?branch=master)
+[![Build Status](https://travis-ci.org/AdguardTeam/dnscrypt-proxy-static.png?branch=master)](https://travis-ci.org/AdguardTeam/dnscrypt-proxy-static?branch=master)
+
+dnscrypt-proxy-static
+---------------------
+
+This is a fork of dnscrypt-proxy with libsodium source code bundled in, removing the need to compile it separately when cross-compiling dnscrypt-proxy for android and other platforms.
+
+Android compile instructions
+============================
+
+First things first, download Android NDK from [here](https://developer.android.com/ndk/downloads/index.html) and unpack it somewhere. I'll assume you unpacked it into `$HOME/android-ndk-r14b`:
+
+```bash
+git clone https://github.com/AdguardTeam/dnscrypt-proxy-static
+cd dnscrypt-proxy-static
+export ANDROID_NDK_HOME=$HOME/android-ndk-r14b ## location of android NDK
+dist-build/android-arm.sh
+dist-build/android-armv7-a.sh
+dist-build/android-armv8-a.sh
+dist-build/android-mips32.sh
+dist-build/android-mips64.sh
+dist-build/android-x86.sh
+```
+
+After everything compiles, there will be .zip files for each android architecture in current directory.
+
+#### Original readme is kept below to avoid merge conflicts with upstream ####
+
+---------------
 
 [![DNSCrypt](https://raw.github.com/jedisct1/dnscrypt-proxy/master/dnscrypt-small.png)](https://dnscrypt.org)
 ============
