@@ -10,7 +10,7 @@ Android compile instructions
 
 First things first, download Android NDK from [here](https://developer.android.com/ndk/downloads/index.html) and unpack it somewhere. I'll assume you unpacked it into `$HOME/android-ndk-r14b`.
 
-You will also need autoconf, automake and libtool.
+You will also need autoconf, automake, libtool and pkg-config to run autoreconf.
 
 ```bash
 git clone https://github.com/AdguardTeam/dnscrypt-proxy-static
